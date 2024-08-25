@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Ponti | Your Bridge to Home Cooking</title>
-        <link rel="icon" href="/nt_icon.png" />
+        <link rel="icon" href="/icon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
 

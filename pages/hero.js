@@ -23,6 +23,10 @@ export default function Hero() {
             console.log(scrollPosition);
             if (scrollPosition > 2000) {
                 logoRef.current.style.top = `${45 - (scrollPosition - 2000)/6}%`
+                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}rem`
+                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}rem`
+                titleRef.current.style.top = `${30 - (scrollPosition - 1550)/20}%`
+                titleRef.current.style.opacity = `${Math.max(0, 1 - (scrollPosition - 1550)/80)}`;
                 console.log("crazy");
             } else if (scrollPosition > 1550) {
                 titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}rem`
@@ -233,7 +237,7 @@ export default function Hero() {
                 <img src="/ponti.png" alt="PONTI" />
                 <p className={styles.subLogo} ref={subLogoRef}>Cook. Share. Connect. </p>
             </div>
-            <div style={{ height: '400px' }}></div>
+            <div style={{ height: '200px' }}></div>
         </>
     );
 }
