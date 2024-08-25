@@ -144,7 +144,7 @@ const finalTarget = { x: -5, y: 1, z: -1 }; // New target when zooming in
     useEffect(() => {
         const handleScroll = throttle(() => {
             const scrollTop = window.scrollY;
-            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const maxScroll = 14487;
 
             if (scrollTop > 1100) {
                 const scrollFraction = Math.min(50 * (scrollTop - 1100) / (maxScroll - 1100), 1.6); // Adjusted max to 2 for full range

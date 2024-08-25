@@ -34,8 +34,9 @@
 .heroIntro {
     position: fixed;
     display: flex;
-    gap: 1rem;
-    width: 50rem;
+    font-size: 2rem;
+    gap: 1.2rem;
+    width: 70rem;
     top: 30%;
     left: 50%;
     translate: -42%;
@@ -43,13 +44,11 @@
 }
 
 .titleOne {
-    font-size: 3rem;
     color: #333;
     position: relative;
 }
 
 .initialFader {
-    font-size: 3rem;
     color: #333;
     position: relative;
     font-weight: 500;
@@ -72,4 +71,30 @@
 .fridge {
     position: relative;
     height: 150vh;
+}
+
+.logoIntro {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40vw;
+    height: auto;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.logoIntro img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.subLogo {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 40vw;
+    height: auto;
+    opacity: 0;
 }

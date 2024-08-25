@@ -7,24 +7,44 @@ import FridgeOpen from '../components/fridgeOpen';
 export default function Hero() {
     const [currentWord, setCurrentWord] = useState(0);
     const [animate, setAnimate] = useState(false);
-    const words = ["home cooking", "a tight community", "your virtual fridge"];
+    const words = ["home cooking", "close community", "your virtual fridge"];
     const mountRef1 = useRef(null);
     const mountRef2 = useRef(null);
-
+    const titleRef = useRef(null);
+    const logoRef = useRef(null);
+    const subLogoRef = useRef(null);
     const objectRefs1 = useRef([]);
     const objectRefs2 = useRef([]);
-    const [render, setRender] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-
-            if (scrollPosition > 1510) {
-                setRender(false);
-            } else {
-                setRender(true);
-            }
             const index = Math.min(Math.floor(Math.abs((scrollPosition / 500) - 0.1)), words.length - 1);
+            console.log(scrollPosition);
+            if (scrollPosition > 2000) {
+                logoRef.current.style.top = `${45 - (scrollPosition - 2000)/6}%`
+                console.log("crazy");
+            } else if (scrollPosition > 1550) {
+                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}rem`
+                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}rem`
+                titleRef.current.style.top = `${30 - (scrollPosition - 1550)/20}%`
+                titleRef.current.style.opacity = `${Math.max(0, 1 - (scrollPosition - 1550)/80)}`;
+                logoRef.current.style.opacity = `${Math.min(1, 0 + (scrollPosition - 1630)/100)}`;
+                logoRef.current.style.width = `${Math.min(50, 40 + (scrollPosition - 1630)/30)}vw`;
+                logoRef.current.style.top = `45%`
+                subLogoRef.current.style.opacity = `${Math.min(1, 0 + (scrollPosition - 1630)/100)}`;
+                subLogoRef.current.style.fontSize = `${Math.min(1.875 , 1.5 + (scrollPosition - 1630)/800)}rem`;
+            } else {
+                titleRef.current.style.width = '70rem';
+                titleRef.current.style.top = `30%`
+                titleRef.current.style.opacity = '1';
+                titleRef.current.style.fontSize = '2rem';
+                logoRef.current.style.opacity = '0';
+                logoRef.current.style.width = '40vw';
+                logoRef.current.style.top = `45%`
+                subLogoRef.current.style.opacity = '0';
+                subLogoRef.current.style.fontSize = '1.5rem';
+            }
 
             if (index !== currentWord) {
                 requestAnimationFrame(() => {
@@ -163,7 +183,7 @@ export default function Hero() {
 
     function getRandomPosition2() {
         const xRange = [-10, 10];
-        const yRange = [-20, -15];
+        const yRange = [-18, -15];
         const zRange = [-3, 3];
 
         return {
@@ -202,16 +222,18 @@ export default function Hero() {
 
     return (
         <>
-            {render ? (<>
-                <div ref={mountRef1} className={styles.sceneContainer}></div>
-                <div ref={mountRef2} className={styles.sceneContainer}></div>
-                <FridgeOpen />
-            </>) : <div style={{ height: '1500px' }}></div>}
-            <div className={styles.heroIntro}>
+            <div ref={mountRef1} className={styles.sceneContainer}></div>
+            <div ref={mountRef2} className={styles.sceneContainer}></div>
+            <FridgeOpen />
+            <div className={styles.heroIntro} ref={titleRef}>
                 <h1 className={styles.titleOne}>your bridge to</h1>
                 <h1 className={`${styles.initialFader} ${animate ? styles.fadeOut : ''}`}>{words[currentWord]}</h1>
             </div>
-            <div style={{ height: '800rem' }}></div>
+            <div ref={logoRef} className={styles.logoIntro}>
+                <img src="/ponti.png" alt="PONTI" />
+                <p className={styles.subLogo} ref={subLogoRef}>Cook. Share. Connect. </p>
+            </div>
+            <div style={{ height: '400px' }}></div>
         </>
     );
 }
