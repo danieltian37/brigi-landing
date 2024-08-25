@@ -2,13 +2,19 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
-    "start": "next start"
+    "dev": "next dev -p 5177",
+    "start": "next start -p 5177"
   },
   "dependencies": {
+    "@react-three/drei": "^9.111.2",
+    "@react-three/fiber": "^8.17.5",
+    "@react-three/postprocessing": "^2.16.2",
+    "@tweenjs/tween.js": "^25.0.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.167.1",
+    "tween": "^0.9.0"
   },
   "engines": {
     "node": ">=18"
