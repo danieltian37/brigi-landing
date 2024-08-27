@@ -23,14 +23,14 @@ export default function Hero() {
             console.log(scrollPosition);
             if (scrollPosition > 2000) {
                 logoRef.current.style.top = `${45 - (scrollPosition - 2000)/6}%`
-                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}rem`
-                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}rem`
+                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}vw`
+                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}vw`
                 titleRef.current.style.top = `${30 - (scrollPosition - 1550)/20}%`
-                titleRef.current.style.opacity = `${Math.max(0, 1 - (scrollPosition - 1550)/80)}`;
+                titleRef.current.style.opacity = `${Math.max(0, 1 - (scrollPosition - 1550)/50)}`;
                 console.log("crazy");
             } else if (scrollPosition > 1550) {
-                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}rem`
-                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}rem`
+                titleRef.current.style.fontSize = `${2 + (scrollPosition - 1550)/150}vw`
+                titleRef.current.style.width = `${70 + (scrollPosition - 1550)/4}vw`
                 titleRef.current.style.top = `${30 - (scrollPosition - 1550)/20}%`
                 titleRef.current.style.opacity = `${Math.max(0, 1 - (scrollPosition - 1550)/80)}`;
                 logoRef.current.style.opacity = `${Math.min(1, 0 + (scrollPosition - 1630)/100)}`;
@@ -39,10 +39,10 @@ export default function Hero() {
                 subLogoRef.current.style.opacity = `${Math.min(1, 0 + (scrollPosition - 1630)/100)}`;
                 subLogoRef.current.style.fontSize = `${Math.min(1.875 , 1.5 + (scrollPosition - 1630)/800)}rem`;
             } else {
-                titleRef.current.style.width = '70rem';
+                titleRef.current.style.width = '70vw';
                 titleRef.current.style.top = `30%`
                 titleRef.current.style.opacity = '1';
-                titleRef.current.style.fontSize = '2rem';
+                titleRef.current.style.fontSize = '2vw';
                 logoRef.current.style.opacity = '0';
                 logoRef.current.style.width = '40vw';
                 logoRef.current.style.top = `45%`
@@ -237,7 +237,7 @@ export default function Hero() {
                 <img src="/ponti.png" alt="PONTI" />
                 <p className={styles.subLogo} ref={subLogoRef}>Cook. Share. Connect. </p>
             </div>
-            <div style={{ height: '200px' }}></div>
+            <div style={{ height: '25rem' }}></div>
         </>
     );
 }

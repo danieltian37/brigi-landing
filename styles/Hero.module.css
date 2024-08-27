@@ -30,13 +30,13 @@
         transform: translateY(20px);
     }
 }
-
 .heroIntro {
     position: fixed;
     display: flex;
-    font-size: 2rem;
-    gap: 1.2rem;
-    width: 70rem;
+    flex-wrap: wrap;
+    font-size: 2vw;
+    gap: 1.5vw;
+    width: 70vw;
     top: 30%;
     left: 50%;
     translate: -42%;
