@@ -1,0 +1,46 @@
+.logo {
+    color: var(--text);
+    height: 40px;
+}
+
+.header {
+    --text: #f4f4f4;
+    --text-inverse: #333;
+    --background: #e5e9e9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 2.5vw 2vh 2.5vw;
+    transition: background 200ms ease-in;
+    background: var(--background);
+    color: var(--text);
+}
+
+.header.scrolled {
+    --background: #28282ba1;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav__link {
+    --spacing: 1em;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: calc(var(--spacing) / 2) var(--spacing);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: clamp(12px, 16px, 18px);
+    font-family: 'Roboto' , sans-serif;
+}

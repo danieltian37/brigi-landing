@@ -1,20 +1,22 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Hero from './hero.js';
-import Main from './main.js';
+import Hero from '../components/hero.js';
+import About from '../components/about.js';
+import Header from '../components/header.js';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Ponti | Your Bridge to Home Cooking</title>
-        <link rel="icon" href="/icon.png" />
+        <title>Frigi | Your Bridge to Home Cooking</title>
+        <link rel="icon" href="/frigi1.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
+      <Header />
 
       <main>
         <Hero />
-        <Main />
+        <About />
       </main>
 
       <footer>
