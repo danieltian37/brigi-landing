@@ -33,13 +33,14 @@
 
 .intro {
     width: 60vw;
-    font-size: clamp(16px, 1.5vw, 2.5rem);
-    padding: 10rem 5vh 5rem 0;
+    font-size: clamp(16px, 2vw, 2.5rem);
+    padding: 10rem 3rem 5rem 0;
     line-height: 1.5;
 }
 
 .getStartedButton {
     position: relative;
+    left: 1%;
     background-color: #2E3192;
     color: #fff;
     border: none;

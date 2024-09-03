@@ -135,3 +135,8 @@
     rotate: -90deg;
     transition: width 0.2s, height 0.2s;
 }
+
+.button__svg:hover {
+    width: 3rem;
+    height: 3rem;
+}

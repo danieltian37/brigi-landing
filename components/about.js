@@ -8,8 +8,7 @@ export default function About() {
         <>
         <div className={styles.blockOne}>
             <div className={styles.intro} id="About">
-                <h1>Welcome to Frigi: <br>
-                </br>Your Virtual Fridge, Pantry, and <span style={{color: "#2E3192"}}>Kitchen Assistant.</span></h1>
+                <h1>Your Virtual Fridge, Pantry, and <span style={{color: "#2E3192"}}>Kitchen Assistant.</span></h1>
                 <p>Become the cook you've always wanted to be. Connect your kitchen to the depths of your imagination.</p>
                 <Link href='/login'>
                     <button className={styles.getStartedButton} style={{ marginTop: '1rem' }}>

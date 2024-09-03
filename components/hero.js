@@ -9,7 +9,7 @@ export default function Hero() {
     const [currentWord, setCurrentWord] = useState(0);
     const [animate, setAnimate] = useState(false);
     const [showHeroIntro, setShowHeroIntro] = useState(false);
-    const [showDownArrow, setShowDownArrow] = useState(true);
+    const [showDownArrow, setShowDownArrow] = useState(false);
     const words = ["home cooking", "close community", "your virtual fridge"];
     const mountRef1 = useRef(null);
     const mountRef2 = useRef(null);
@@ -24,6 +24,7 @@ export default function Hero() {
         const { hash } = window.location;
         if (!hash) {
             setShowHeroIntro(true);
+            setShowDownArrow(true);
         }
     }, []);
 
@@ -51,7 +52,6 @@ export default function Hero() {
         // Cleanup function to remove the event listener when the component unmounts
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            clearTimeout(animationTimeout);
         };
     }, [])
 
@@ -60,7 +60,7 @@ export default function Hero() {
             const scrollPosition = window.scrollY;
             const index = Math.min(Math.floor(Math.abs((scrollPosition / 500) - 0.1)), words.length - 1);
 
-            if (scrollPosition > 2500) {
+            if (scrollPosition > 2650) {
                 setShowHeroIntro(false);
             } else {
                 setShowHeroIntro(true);
